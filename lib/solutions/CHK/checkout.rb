@@ -16,6 +16,8 @@ class Checkout
   end
 
   def apply_offers
-    @skus.
+    @skus.split("").sort.join("")
+    
   end
 end
+
