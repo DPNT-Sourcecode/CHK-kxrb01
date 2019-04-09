@@ -42,6 +42,3 @@ class ClientTest < Minitest::Test
     assert_equal 40, Checkout.new.checkout('E')
   end
 end
-
-
-
