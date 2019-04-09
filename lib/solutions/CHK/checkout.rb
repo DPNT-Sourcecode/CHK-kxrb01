@@ -1,7 +1,7 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
-  ITEMS = ['A', 'B', 'C', 'D']
-  PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}]
+  ITEMS = ['A', 'B', 'C', 'D', 'E']
+  PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}, {item: 'E', count: 1, price: 40}]
   OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}]
 
   def checkout(skus)
@@ -51,4 +51,5 @@ class Checkout
     end
   end
 end
+
 
