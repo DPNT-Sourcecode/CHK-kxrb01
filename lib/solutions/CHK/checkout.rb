@@ -23,6 +23,8 @@ class Checkout
     sku_array = @skus.split("")
     sku_array.uniq.each do |item|
       basket_item = {:item => item, :count => sku_array.count(item)}
+      p  "adding 1 to count "
+      p basket_item[:count] += 1
       @basket << basket_item
     end
   end
@@ -84,6 +86,7 @@ class Checkout
     end
   end
 end
+
 
 
 
