@@ -29,7 +29,12 @@ class ClientTest < Minitest::Test
   def test_minus_one_is_returned_when_passed_a_basket_with_a
     assert_equal -1, Checkout.new.checkout('a')
   end
+
+  def test_minus_one_is_returned_when_passed_a_basket_with_hyphen
+    assert_equal -1, Checkout.new.checkout('-')
+  end
+
+  def test_minus_one_is_returned_when_passed_a_basket_with_ABCa
+    assert_equal -1, Checkout.new.checkout('ABCa')
+  end
 end
-
-
-
