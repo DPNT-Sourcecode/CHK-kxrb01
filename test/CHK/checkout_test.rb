@@ -18,4 +18,3 @@ class ClientTest < Minitest::Test
     assert_equal 260, Checkout.new.checkout('AAAAAA')
   end
 end
-
