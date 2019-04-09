@@ -58,7 +58,7 @@ class Checkout
       COMBO_OFFERS.each do |item_detail|
         if item_detail[:item] == basket_item[:item]
           while item_detail[:count] <= basket_item[:count]
-            if @basket.select {|element| element[:item] == item_detail[:free_item]} != nil
+            if @basket.select {|element| element[:item] == item_detail[:free_item]}.first != nil
               #reduce the quantity of the free item in the basket by 1
               @basket.select {|element| element[:item] == item_detail[:free_item]}.first[:count] -= 1
               @total_price += (PRICES.select{|an_item| an_item[:item] == item_detail[:item] }.first[:price] * item_detail[:count])
@@ -70,3 +70,4 @@ class Checkout
     end
   end
 end
+
