@@ -10,4 +10,3 @@ class ClientTest < Minitest::Test
     assert_equal 115, Checkout.new.checkout('ABCD')
   end
 end
-
