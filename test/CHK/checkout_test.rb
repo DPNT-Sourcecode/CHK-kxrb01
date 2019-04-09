@@ -19,11 +19,11 @@ class ClientTest < Minitest::Test
   end
 
   def test_total_price_is_305_of_basket_with_BAAAAAAB
-    assert_equal 305, Checkout.new.checkout('BAAAAAAB')
+    assert_equal 295, Checkout.new.checkout('BAAAAAAB')
   end
 
   def test_total_price_is_350_of_basket_with_BAAAAAABDDD
-    assert_equal 350, Checkout.new.checkout('BAAAAAABDDD')
+    assert_equal 340, Checkout.new.checkout('BAAAAAABDDD')
   end
 
   def test_minus_one_is_returned_when_passed_a_basket_with_a
@@ -42,5 +42,6 @@ class ClientTest < Minitest::Test
     assert_equal 40, Checkout.new.checkout('E')
   end
 end
+
 
 
