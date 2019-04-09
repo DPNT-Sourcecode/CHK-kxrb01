@@ -60,6 +60,7 @@ class Checkout
           while item_detail[:count] <= basket_item[:count]
 
             if @basket.include? item_detail[:free_item]
+              @total_price += item_detail[:price]
               basket_item[:count] -= item_detail[:count]
               #reduce the quantity of the free item in the basket by 1
 
@@ -72,6 +73,7 @@ class Checkout
     end
   end
 end
+
 
 
 
