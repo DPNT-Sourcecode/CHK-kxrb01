@@ -3,7 +3,7 @@ class Checkout
   ITEMS = ['A', 'B', 'C', 'D', 'E']
   PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}, {item: 'E', count: 1, price: 40}]
   MULTIBUY_OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}, {item: 'A', count: 5, offer_price: 200}]
-  COMBO_OFFERS = []
+  COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B'}]
 
   def checkout(skus)
     @skus = skus
@@ -12,6 +12,7 @@ class Checkout
       return -1 if !ITEMS.include? item
     end
     structure_basket()
+    apply_combo_offers()
     apply_multibuy_offers()
     apply_normal_price()
     return @total_price
@@ -51,7 +52,21 @@ class Checkout
       end
     end
   end
+
+  def apply_combo_offers
+    @basket.each do |basket_item|
+      COMBO_OFFERS.each do |item_detail|
+        if item_detail[:item] == basket_item[:item]
+          while item_detail[:count] <= basket_item[:count]
+            @total_price += item_detail[:price]
+            basket_item[:count] -= item_detail[:count]
+          end
+        end
+      end
+    end
+  end
 end
+
 
 
 
