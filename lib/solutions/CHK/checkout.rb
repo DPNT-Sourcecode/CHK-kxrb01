@@ -26,8 +26,11 @@ class Checkout
   end
 
   def apply_offers
+    p sorted_offers = OFFERS.sort_by{|an_offer| an_offer[:count]}.reverse
+
     @basket.each do |basket_item|
-      OFFERS.each do |offer|
+      sorted_offers.each do |offer|
+        p offer
         if offer[:item] == basket_item[:item]
           while offer[:count] <= basket_item[:count]
             @total_price += offer[:offer_price]
@@ -51,3 +54,4 @@ class Checkout
     end
   end
 end
+
