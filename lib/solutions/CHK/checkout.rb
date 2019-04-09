@@ -2,16 +2,10 @@
 class Checkout
   PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}]
   OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}]
- #  A    | 50    | 3A for 130     |
- # | B    | 30    | 2B for 45      |
- # | C    | 20    |                |
- # | D    | 15
+
   def checkout(skus)
     @skus = skus
     @total_price = 0
-    # @skus.split("").each do |item|
-    #   @total_price = @total_price + PRICES[item.to_sym]
-    # end
     apply_offers()
     apply_normal_price()
     return @total_price
@@ -35,15 +29,6 @@ class Checkout
         end
       end
     end
-    # sorted_basket = @skus.split("").sort.join("")
-    # OFFERS.each do |key, value|
-    #   if sorted_basket.include? key.to_s
-    #     key.to_s.split("").each do |item|
-    #       @total_price = @total_price - PRICES[item.to_sym]
-    #     end
-    #     @total_price = @total_price + OFFERS[key]
-    #   end
-    # end
   end
   def apply_normal_price
     @basket.each do |basket_item|
@@ -51,14 +36,15 @@ class Checkout
         if item_detail[:item] == basket_item[:item]
           while item_detail[:count] <= basket_item[:count]
             p "total price"
-            p @total_price += item_detail[:offer_price]
-            basket_item[:count] -= offer[:count]
+            p @total_price += item_detail[:price]
+            basket_item[:count] -= item_detail[:count]
           end
         end
       end
     end
   end
 end
+
 
 
 
