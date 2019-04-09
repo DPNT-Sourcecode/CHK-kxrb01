@@ -17,7 +17,12 @@ class Checkout
   end
 
   def apply_offers
-    
+    basket = []
+    sku_array = @skus.split("")
+    sku_array.uniq.each do |item|
+      p basket_item = {:item => item, :count => sku_array.count(item)}
+      p basket << basket_item
+    end
     sorted_basket = @skus.split("").sort.join("")
     OFFERS.each do |key, value|
       if sorted_basket.include? key.to_s
@@ -29,4 +34,5 @@ class Checkout
     end
   end
 end
+
 
