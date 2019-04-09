@@ -28,9 +28,8 @@ class Checkout
         if offer[:item] == basket_item[:item]
           while offer[:count] =< basket_item[:count]
             @total_price += offer[:offer_price]
-            basket_item[:count] -=
+            basket_item[:count] -= offer[:count]
           end
-
         end
       end
     end
@@ -46,6 +45,7 @@ class Checkout
     # end
   end
 end
+
 
 
 
