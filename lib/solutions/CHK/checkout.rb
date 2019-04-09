@@ -23,6 +23,8 @@ class Checkout
       basket_item = {:item => item, :count => sku_array.count(item)}
       basket << basket_item
     end
+    OFFERS.each do |offer|
+      if offer[:item] 
     # sorted_basket = @skus.split("").sort.join("")
     # OFFERS.each do |key, value|
     #   if sorted_basket.include? key.to_s
@@ -34,6 +36,7 @@ class Checkout
     # end
   end
 end
+
 
 
 
