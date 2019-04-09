@@ -13,7 +13,7 @@ class Checkout
     #   @total_price = @total_price + PRICES[item.to_sym]
     # end
     apply_offers()
-    p @basket
+
     return @total_price
   end
 
@@ -28,13 +28,14 @@ class Checkout
       OFFERS.each do |offer|
         if offer[:item] == basket_item[:item]
           while offer[:count] <= basket_item[:count]
-            @total_price += offer[:offer_price]
+            p "total price"
+            p @total_price += offer[:offer_price]
             basket_item[:count] -= offer[:count]
           end
         end
       end
     end
-  
+
 
     # sorted_basket = @skus.split("").sort.join("")
     # OFFERS.each do |key, value|
@@ -47,4 +48,5 @@ class Checkout
     # end
   end
 end
+
 
