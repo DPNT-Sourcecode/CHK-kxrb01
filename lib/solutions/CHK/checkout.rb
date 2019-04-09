@@ -25,7 +25,12 @@ class Checkout
     end
     basket.each do |basket_item|
       OFFERS.each do |offer|
-        if offer[:item] == basket_item[:item] and offer[:count] =< basket_item[:count]
+        if offer[:item] == basket_item[:item]
+          while offer[:count] =< basket_item[:count]
+            @total_price += offer[:offer_price]
+            basket_item[:count] -=
+          end
+
         end
       end
     end
@@ -41,6 +46,7 @@ class Checkout
     # end
   end
 end
+
 
 
 
