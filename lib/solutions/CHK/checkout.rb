@@ -20,19 +20,20 @@ class Checkout
     basket = []
     sku_array = @skus.split("")
     sku_array.uniq.each do |item|
-      p basket_item = {:item => item, :count => sku_array.count(item)}
-      p basket << basket_item
+      basket_item = {:item => item, :count => sku_array.count(item)}
+      basket << basket_item
     end
-    sorted_basket = @skus.split("").sort.join("")
-    OFFERS.each do |key, value|
-      if sorted_basket.include? key.to_s
-        key.to_s.split("").each do |item|
-          @total_price = @total_price - PRICES[item.to_sym]
-        end
-        @total_price = @total_price + OFFERS[key]
-      end
-    end
+    # sorted_basket = @skus.split("").sort.join("")
+    # OFFERS.each do |key, value|
+    #   if sorted_basket.include? key.to_s
+    #     key.to_s.split("").each do |item|
+    #       @total_price = @total_price - PRICES[item.to_sym]
+    #     end
+    #     @total_price = @total_price + OFFERS[key]
+    #   end
+    # end
   end
 end
+
 
 
