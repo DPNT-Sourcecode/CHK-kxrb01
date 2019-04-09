@@ -9,21 +9,22 @@ class Checkout
   def checkout(skus)
     @skus = skus
     @total_price = 0
-    @skus.split("").each do |item|
-      @total_price = @total_price + PRICES[item.to_sym]
-    end
+    # @skus.split("").each do |item|
+    #   @total_price = @total_price + PRICES[item.to_sym]
+    # end
     apply_offers()
+    p @basket
     return @total_price
   end
 
   def apply_offers
-    basket = []
+    @basket = []
     sku_array = @skus.split("")
     sku_array.uniq.each do |item|
       basket_item = {:item => item, :count => sku_array.count(item)}
-      basket << basket_item
+      @basket << basket_item
     end
-    basket.each do |basket_item|
+    @basket.each do |basket_item|
       OFFERS.each do |offer|
         if offer[:item] == basket_item[:item]
           while offer[:count] <= basket_item[:count]
@@ -33,7 +34,7 @@ class Checkout
         end
       end
     end
-    p @total_price
+  
 
     # sorted_basket = @skus.split("").sort.join("")
     # OFFERS.each do |key, value|
@@ -46,3 +47,4 @@ class Checkout
     # end
   end
 end
+
