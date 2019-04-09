@@ -66,7 +66,11 @@ class Checkout
 
             if @basket.select {|element| element[:item] == item_detail[:free_item]} != nil
               #reduce the quantity of the free item in the basket by 1
-              p @basket.select {|element| element[:item] == item_detail[:free_item]}
+              p free_item = @basket.select {|element| element[:item] == item_detail[:free_item]}
+              p free_item[:count] -= 1
+              p @basket
+              break
+
               # p @total_price += (PRICES.select{|an_item| an_item[:item] == item_detail[:item] }[:price] * item_detail[:count])
               # basket_item[:count] -= item_detail[:count]
 
@@ -80,6 +84,7 @@ class Checkout
     end
   end
 end
+
 
 
 
