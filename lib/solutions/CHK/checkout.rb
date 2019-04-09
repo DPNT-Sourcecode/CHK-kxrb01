@@ -60,7 +60,10 @@ class Checkout
           while item_detail[:count] <= basket_item[:count]
             p item_detail[:count]
             p basket_item[:count]
+            p item_detail[:free_item]
+            p @basket
             p @basket.include? item_detail[:free_item]
+            break
             if @basket.include? item_detail[:free_item]
               # @total_price += PRICES.select{|an_item| an_item[:item] == item_detail[:item] }[:price] * item_detail[:count]
               basket_item[:count] -= item_detail[:count]
@@ -75,10 +78,3 @@ class Checkout
     end
   end
 end
-
-
-
-
-
-
-
