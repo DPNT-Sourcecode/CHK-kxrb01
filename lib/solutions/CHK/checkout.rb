@@ -1,6 +1,6 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
-  PRICES = {A: 50, B: 30, C: 20, D: 15}
+  PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}]
   OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}]
  #  A    | 50    | 3A for 130     |
  # | B    | 30    | 2B for 45      |
@@ -13,7 +13,7 @@ class Checkout
     #   @total_price = @total_price + PRICES[item.to_sym]
     # end
     apply_offers()
-
+    apply_normal_price()
     return @total_price
   end
 
@@ -48,5 +48,6 @@ class Checkout
     # end
   end
 end
+
 
 
