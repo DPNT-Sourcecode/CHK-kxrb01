@@ -13,6 +13,7 @@ class Checkout
       @total_price = @total_price + PRICES[item.to_sym]
     end
     apply_offers()
+    return @total_price
   end
 
   def apply_offers
@@ -20,12 +21,14 @@ class Checkout
     OFFERS.each do |key, value|
       if sorted_basket.include? key.to_s
         key.to_s.split("").each do |item|
-          
+          @total_price = @total_price - PRICES[item.to_sym]
         end
+        @total_price = @total_price + OFFERS[key]
       end
     end
   end
 end
+
 
 
 
