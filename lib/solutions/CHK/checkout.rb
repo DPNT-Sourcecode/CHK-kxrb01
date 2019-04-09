@@ -16,8 +16,9 @@ class Checkout
   end
 
   def apply_offers
-    @skus.split("").sort.join("")
+    sorted_basket = @skus.split("").sort.join("")
     
   end
 end
+
 
