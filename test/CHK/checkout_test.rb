@@ -14,5 +14,3 @@ class ClientTest < Minitest::Test
     assert_equal 145, Checkout.new.checkout('AAAD')
   end
 end
-
-
