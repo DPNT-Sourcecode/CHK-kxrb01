@@ -46,4 +46,3 @@ class ClientTest < Minitest::Test
     assert_equal 80, Checkout.new.checkout('EEB')
   end
 end
-

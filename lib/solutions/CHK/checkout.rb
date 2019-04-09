@@ -58,16 +58,12 @@ class Checkout
       COMBO_OFFERS.each do |item_detail|
         if item_detail[:item] == basket_item[:item]
           while item_detail[:count] <= basket_item[:count]
-            @total_price += item_detail[:price]
-            basket_item[:count] -= item_detail[:count]
+            if @basket.include? item_detail[:free_item]
+              basket_item[:count] -= item_detail[:count]
+            end
           end
         end
       end
     end
   end
 end
-
-
-
-
-
