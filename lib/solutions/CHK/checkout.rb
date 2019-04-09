@@ -6,18 +6,22 @@ class Checkout
   def checkout(skus)
     @skus = skus
     @total_price = 0
+    structure_basket()
     apply_offers()
     apply_normal_price()
     return @total_price
   end
 
-  def apply_offers
+  def structure_basket
     @basket = []
     sku_array = @skus.split("")
     sku_array.uniq.each do |item|
       basket_item = {:item => item, :count => sku_array.count(item)}
       @basket << basket_item
     end
+  end
+
+  def apply_offers
     @basket.each do |basket_item|
       OFFERS.each do |offer|
         if offer[:item] == basket_item[:item]
@@ -30,6 +34,7 @@ class Checkout
       end
     end
   end
+
   def apply_normal_price
     @basket.each do |basket_item|
       PRICES.each do |item_detail|
@@ -44,6 +49,7 @@ class Checkout
     end
   end
 end
+
 
 
 
