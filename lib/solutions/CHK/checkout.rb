@@ -1,7 +1,7 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
   PRICES = {A: 50, B: 30, C: 20, D: 15}
-  OFFERS = {3A: 130, 2B: 45}
+  OFFERS = {AAA: 130, BB: 45}
  #  A    | 50    | 3A for 130     |
  # | B    | 30    | 2B for 45      |
  # | C    | 20    |                |
@@ -14,5 +14,6 @@ class Checkout
     return total_price
   end
 end
+
 
 
