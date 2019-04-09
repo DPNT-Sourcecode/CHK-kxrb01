@@ -17,8 +17,15 @@ class Checkout
 
   def apply_offers
     sorted_basket = @skus.split("").sort.join("")
-    
+    OFFERS.each do |key, value|
+      if sorted_basket.include? key.to_s
+        key.to_s.split("").each do |item|
+          
+        end
+      end
+    end
   end
 end
+
 
 
