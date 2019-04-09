@@ -7,13 +7,16 @@ class Checkout
  # | C    | 20    |                |
  # | D    | 15
   def checkout(skus)
-    total_price = 0
+    @skus = skus
+    @total_price = 0
     skus.split("").each do |item|
-      total_price = total_price + PRICES[item.to_sym]
+      @total_price = @total_price + PRICES[item.to_sym]
     end
-    return total_price
+    apply_offers(skus)
+    return @total_price
   end
 end
+
 
 
 
