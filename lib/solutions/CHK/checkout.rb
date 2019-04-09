@@ -2,7 +2,8 @@
 class Checkout
 
   def checkout(skus)
-    raise 'Not implemented'
+    skus.split(",")
   end
 
 end
+
