@@ -33,7 +33,7 @@ class Checkout
         end
       end
     end
-    p basket
+    p @total_price
 
     # sorted_basket = @skus.split("").sort.join("")
     # OFFERS.each do |key, value|
@@ -46,11 +46,3 @@ class Checkout
     # end
   end
 end
-
-
-
-
-
-
-
-
