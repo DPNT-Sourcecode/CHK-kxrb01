@@ -1,11 +1,15 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
+  ITEMS = ['A', 'B', 'C', 'D']
   PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}]
   OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}]
 
   def checkout(skus)
     @skus = skus
     @total_price = 0
+    skus.split("").uniq.each do |item|
+      return -1 if !ITEMS.include? item
+    end
     structure_basket()
     apply_offers()
     apply_normal_price()
@@ -47,3 +51,4 @@ class Checkout
     end
   end
 end
+
