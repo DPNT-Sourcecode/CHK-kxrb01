@@ -2,7 +2,7 @@
 class Checkout
   ITEMS = ['A', 'B', 'C', 'D', 'E']
   PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}, {item: 'E', count: 1, price: 40}]
-  OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}]
+  OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}, {item: 'A', count: 5, offer_price: 200}]
 
   def checkout(skus)
     @skus = skus
@@ -26,11 +26,8 @@ class Checkout
   end
 
   def apply_offers
-    p sorted_offers = OFFERS.sort_by{|an_offer| an_offer[:count]}.reverse
-
     @basket.each do |basket_item|
-      sorted_offers.each do |offer|
-        p offer
+      OFFERS.sort_by{|an_offer| an_offer[:count]}.reverse.each do |offer|
         if offer[:item] == basket_item[:item]
           while offer[:count] <= basket_item[:count]
             @total_price += offer[:offer_price]
@@ -54,4 +51,5 @@ class Checkout
     end
   end
 end
+
 
