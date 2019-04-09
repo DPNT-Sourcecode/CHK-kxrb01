@@ -35,8 +35,6 @@ class Checkout
         end
       end
     end
-
-
     # sorted_basket = @skus.split("").sort.join("")
     # OFFERS.each do |key, value|
     #   if sorted_basket.include? key.to_s
@@ -47,7 +45,21 @@ class Checkout
     #   end
     # end
   end
+  def apply_normal_price
+    @basket.each do |basket_item|
+      PRICES.each do |item_detail|
+        if item_detail[:item] == basket_item[:item]
+          while item_detail[:count] <= basket_item[:count]
+            p "total price"
+            p @total_price += item_detail[:offer_price]
+            basket_item[:count] -= offer[:count]
+          end
+        end
+      end
+    end
+  end
 end
+
 
 
 
