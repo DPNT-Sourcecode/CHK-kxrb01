@@ -47,9 +47,14 @@ class Checkout
                      {item: 'K', count: 2, offer_price: 150},
                      {item: 'P', count: 5, offer_price: 200},
                      {item: 'Q', count: 3, offer_price: 80},
-                     {item: 'U', count: 4, offer_price: 120}
+                     {item: 'U', count: 4, offer_price: 120},
+                     {item: 'V', count: 2, offer_price: 90},
+                     {item: 'V', count: 3, offer_price: 130}
                     ]
-  COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B'}]
+  COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B'},
+                  {item: 'N', count: 3, free_item: 'M'},
+                  {item: 'R', count: 3, free_item: 'Q'}
+                 ]
 
   def checkout(skus)
     @skus = skus
@@ -120,7 +125,3 @@ class Checkout
     end
   end
 end
-
-
-
-
