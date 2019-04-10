@@ -41,7 +41,11 @@ class Checkout
   MULTIBUY_OFFERS = [{item: 'A', count: 3, offer_price: 130},
                      {item: 'B', count: 2, offer_price: 45},
                      {item: 'A', count: 5, offer_price: 200},
-                      {item: 'F', count: 3, offer_price: 20}]
+                     {item: 'F', count: 3, offer_price: 20},
+                     {item: 'H', count: 5, offer_price: 45},
+                     {item: 'H', count: 10, offer_price: 80},
+                     {item: 'K', count: 2, offer_price: 150}
+                    ]
   COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B'}]
 
   def checkout(skus)
@@ -113,5 +117,6 @@ class Checkout
     end
   end
 end
+
 
 
