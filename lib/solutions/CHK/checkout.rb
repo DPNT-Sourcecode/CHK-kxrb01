@@ -109,9 +109,13 @@ class Checkout
   def apply_group_discounts
     @basket.each do |basket_item|
       GROUP_DISCOUNT_OFFERS.each do |group_discount|
+        if group_discount[:items].includes? basket_item[:item]
+
+        end
       end
   end
 end
+
 
 
 
