@@ -90,8 +90,8 @@ class ClientTest < Minitest::Test
     assert_equal 60, Checkout.new.checkout('J')
   end
 
-  def test_total_price_is_80_of_basket_with_K
-    assert_equal 80, Checkout.new.checkout('K')
+  def test_total_price_is_70_of_basket_with_K
+    assert_equal 70, Checkout.new.checkout('K')
   end
 
   def test_total_price_is_90_of_basket_with_L
@@ -122,8 +122,8 @@ class ClientTest < Minitest::Test
     assert_equal 50, Checkout.new.checkout('R')
   end
 
-  def test_total_price_is_30_of_basket_with_S
-    assert_equal 30, Checkout.new.checkout('S')
+  def test_total_price_is_20_of_basket_with_S
+    assert_equal 20, Checkout.new.checkout('S')
   end
 
   def test_total_price_is_20_of_basket_with_T
@@ -142,12 +142,12 @@ class ClientTest < Minitest::Test
     assert_equal 20, Checkout.new.checkout('W')
   end
 
-  def test_total_price_is_90_of_basket_with_X
-    assert_equal 90, Checkout.new.checkout('X')
+  def test_total_price_is_17_of_basket_with_X
+    assert_equal 17, Checkout.new.checkout('X')
   end
 
-  def test_total_price_is_10_of_basket_with_Y
-    assert_equal 10, Checkout.new.checkout('Y')
+  def test_total_price_is_20_of_basket_with_Y
+    assert_equal 20, Checkout.new.checkout('Y')
   end
 
   def test_total_price_is_50_of_basket_with_Z
@@ -194,9 +194,6 @@ class ClientTest < Minitest::Test
     assert_equal 130, Checkout.new.checkout('VVV')
   end
 
-  def test_total_price_is_70_of_basket_with_K
-    assert_equal 70, Checkout.new.checkout('K')
-  end
   # | A    | 50    | 3A for 130, 5A for 200          |
   # | B    | 30    | 2B for 45                       |
   # | C    | 20    |                                 |
@@ -228,4 +225,5 @@ class ClientTest < Minitest::Test
 
 
 end
+
 
