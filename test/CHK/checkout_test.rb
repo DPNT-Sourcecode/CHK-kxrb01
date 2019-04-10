@@ -185,6 +185,10 @@ class ClientTest < Minitest::Test
   def test_total_price_is_90_of_basket_with_VV
     assert_equal 90, Checkout.new.checkout('VV')
   end
+
+  def test_total_price_is_130_of_basket_with_VVV
+    assert_equal 130, Checkout.new.checkout('VVV')
+  end
   #   H    | 10    | 5H for 45, 10H for 80  |
   # | I    | 35    |                        |
   # | J    | 60    |                        |
@@ -208,5 +212,6 @@ class ClientTest < Minitest::Test
 
 
 end
+
 
 
