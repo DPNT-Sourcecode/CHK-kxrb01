@@ -1,7 +1,9 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
   ITEMS = ['A', 'B', 'C', 'D', 'E', 'F']
-  PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}, {item: 'E', count: 1, price: 40}]
+  PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30},
+            {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15},
+            {item: 'E', count: 1, price: 40}, {item: 'F', count: 1, price: 10}]
   MULTIBUY_OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}, {item: 'A', count: 5, offer_price: 200}]
   COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B'}, {item: 'F', count: 2, free_item: 'F'} ]
 
@@ -74,5 +76,6 @@ class Checkout
     end
   end
 end
+
 
 
