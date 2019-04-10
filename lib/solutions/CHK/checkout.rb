@@ -136,11 +136,14 @@ class Checkout
           if sorted_basket_item[:count] >= total_qty_to_reduce
             sorted_basket_item[:count] -= total_qty_to_reduce
             total_qty_to_reduce -= sorted_basket_item[:count]
+          else
+            sorted_basket_item[:count] = 0
           end
         end
       end
     end
   end
 end
+
 
 
