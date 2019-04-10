@@ -78,5 +78,3 @@ class ClientTest < Minitest::Test
     assert_equal 875, Checkout.new.checkout('BAAAAAABDDDEEBEECDAACCDBBBBEEEFFFFF')
   end
 end
-
-
