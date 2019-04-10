@@ -150,8 +150,8 @@ class ClientTest < Minitest::Test
     assert_equal 20, Checkout.new.checkout('Y')
   end
 
-  def test_total_price_is_50_of_basket_with_Z
-    assert_equal 50, Checkout.new.checkout('Z')
+  def test_total_price_is_21_of_basket_with_Z
+    assert_equal 21, Checkout.new.checkout('Z')
   end
 
   def test_total_price_is_45_of_basket_with_HHHHH
@@ -225,5 +225,6 @@ class ClientTest < Minitest::Test
 
 
 end
+
 
 

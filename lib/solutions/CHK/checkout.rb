@@ -42,7 +42,7 @@ class Checkout
             {item: 'S', count: 1, price: 20}, {item: 'T', count: 1, price: 20},
             {item: 'U', count: 1, price: 40}, {item: 'V', count: 1, price: 50},
             {item: 'W', count: 1, price: 20}, {item: 'X', count: 1, price: 17},
-            {item: 'Y', count: 1, price: 20}, {item: 'Z', count: 1, price: 50},
+            {item: 'Y', count: 1, price: 20}, {item: 'Z', count: 1, price: 21},
             ]
   MULTIBUY_OFFERS = [{item: 'A', count: 3, offer_price: 130},
                      {item: 'B', count: 2, offer_price: 45},
@@ -131,6 +131,7 @@ class Checkout
     end
   end
 end
+
 
 
 
