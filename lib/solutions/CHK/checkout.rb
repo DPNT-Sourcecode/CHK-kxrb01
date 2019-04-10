@@ -1,4 +1,31 @@
 # noinspection RubyUnusedLocalVariable
+# | A    | 50    | 3A for 130, 5A for 200          |
+# | B    | 30    | 2B for 45                       |
+# | C    | 20    |                                 |
+# | D    | 15    |                                 |
+# | E    | 40    | 2E get one B free               |
+# | F    | 10    | 2F get one F free               |
+# | G    | 20    |                                 |
+# | H    | 10    | 5H for 45, 10H for 80           |
+# | I    | 35    |                                 |
+# | J    | 60    |                                 |
+# | K    | 70    | 2K for 120                      |
+# | L    | 90    |                                 |
+# | M    | 15    |                                 |
+# | N    | 40    | 3N get one M free               |
+# | O    | 10    |                                 |
+# | P    | 50    | 5P for 200                      |
+# | Q    | 30    | 3Q for 80                       |
+# | R    | 50    | 3R get one Q free               |
+# | S    | 20    | buy any 3 of (S,T,X,Y,Z) for 45 |
+# | T    | 20    | buy any 3 of (S,T,X,Y,Z) for 45 |
+# | U    | 40    | 3U get one U free               |
+# | V    | 50    | 2V for 90, 3V for 130           |
+# | W    | 20    |                                 |
+# | X    | 17    | buy any 3 of (S,T,X,Y,Z) for 45 |
+# | Y    | 20    | buy any 3 of (S,T,X,Y,Z) for 45 |
+# | Z    | 21    | buy any 3 of (S,T,X,Y,Z) for 45 |
+# +------+-------+---------------------------------+
 
 class Checkout
   ITEMS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -8,7 +35,7 @@ class Checkout
             {item: 'E', count: 1, price: 40}, {item: 'F', count: 1, price: 10},
             {item: 'G', count: 1, price: 20}, {item: 'H', count: 1, price: 10},
             {item: 'I', count: 1, price: 35}, {item: 'J', count: 1, price: 60},
-            {item: 'K', count: 1, price: 80}, {item: 'L', count: 1, price: 90},
+            {item: 'K', count: 1, price: 70}, {item: 'L', count: 1, price: 90},
             {item: 'M', count: 1, price: 15}, {item: 'N', count: 1, price: 40},
             {item: 'O', count: 1, price: 10}, {item: 'P', count: 1, price: 50},
             {item: 'Q', count: 1, price: 30}, {item: 'R', count: 1, price: 50},
@@ -104,4 +131,5 @@ class Checkout
     end
   end
 end
+
 
