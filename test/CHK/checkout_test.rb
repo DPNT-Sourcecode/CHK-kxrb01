@@ -31,15 +31,15 @@ class ClientTest < Minitest::Test
   end
 
   def test_minus_one_is_returned_when_passed_a_basket_with_empty_string
-    assert_equal -1, Checkout.new.checkout("")
+    assert_equal (-1), Checkout.new.checkout("")
   end
 
   def test_minus_one_is_returned_when_passed_a_basket_with_hyphen
-    assert_equal -1, Checkout.new.checkout('-')
+    assert_equal (-1), Checkout.new.checkout('-')
   end
 
   def test_minus_one_is_returned_when_passed_a_basket_with_ABCa
-    assert_equal -1, Checkout.new.checkout('ABCa')
+    assert_equal (-1), Checkout.new.checkout('ABCa')
   end
 
   def test_total_price_is_40_of_basket_with_E
@@ -78,5 +78,6 @@ class ClientTest < Minitest::Test
     assert_equal 875, Checkout.new.checkout('BAAAAAABDDDEEBEECDAACCDBBBBEEEFFFFF')
   end
 end
+
 
 
