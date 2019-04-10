@@ -31,8 +31,10 @@ class Checkout
     @basket.each do |basket_item|
       MULTIBUY_OFFERS.sort_by{|an_offer| an_offer[:count]}.reverse.each do |offer|
         if offer[:item] == basket_item[:item]
+          number_of_offers = 0
           if basket_item[:count] >= offer[:count]
-            number_of_offers = round(basket_item[:count] / 
+            number_of_offers = basket_item[:count] / offer[:count]
+          end
           while offer[:count] <= basket_item[:count]
             @total_price += offer[:offer_price]
             basket_item[:count] -= offer[:count]
@@ -73,4 +75,5 @@ class Checkout
     end
   end
 end
+
 
