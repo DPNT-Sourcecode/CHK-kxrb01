@@ -63,10 +63,10 @@ class Checkout
             free_item = @basket.select {|element| element[:item] == item_detail[:free_item]}.first
             if free_item != nil
               #reduce the quantity of the free item in the basket by 1
-              if @basket.select {|element| element[:item] == item_detail[:free_item]}.first[:count] >= number_of_possible_combo_offers
-                @basket.select {|element| element[:item] == item_detail[:free_item]}.first[:count] -= number_of_possible_combo_offers
-              elsif
-                @basket.select {|element| element[:item] == item_detail[:free_item]}.first[:count] -= number_of_possible_combo_offers
+              if free_item[:count] >= number_of_possible_combo_offers
+                free_item[:count] -= number_of_possible_combo_offers
+              elsif free_item[:count] > 0
+                free_item[:count] = 0
               end
               PRICES.select{|an_item| an_item[:item] == item_detail[:item] }.first[:price] * item_detail[:count]
               @total_price += (PRICES.select{|an_item| an_item[:item] == item_detail[:item] }.first[:price] * item_detail[:count])
@@ -78,6 +78,7 @@ class Checkout
     end
   end
 end
+
 
 
 
