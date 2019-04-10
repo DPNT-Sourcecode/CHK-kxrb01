@@ -50,7 +50,7 @@ class Checkout
                      {item: 'F', count: 3, offer_price: 20},
                      {item: 'H', count: 5, offer_price: 45},
                      {item: 'H', count: 10, offer_price: 80},
-                     {item: 'K', count: 2, offer_price: 150},
+                     {item: 'K', count: 2, offer_price: 120},
                      {item: 'P', count: 5, offer_price: 200},
                      {item: 'Q', count: 3, offer_price: 80},
                      {item: 'U', count: 4, offer_price: 120},
@@ -131,7 +131,3 @@ class Checkout
     end
   end
 end
-
-
-
-
