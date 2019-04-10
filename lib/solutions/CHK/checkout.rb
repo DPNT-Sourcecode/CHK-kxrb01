@@ -130,7 +130,7 @@ class Checkout
 
       @total_price += (GROUP_DISCOUNT_OFFER[:offer_price] * number_of_group_discount_offers)
       total_qty_to_reduce = number_of_group_discount_offers * GROUP_DISCOUNT_OFFER[:count]
-      sorted_discount_basket_items = discount_basket_items.sort_by{|a_discount_item| a_discount_item[:price]}.reverse
+      p sorted_discount_basket_items = discount_basket_items.sort_by{|a_discount_item| a_discount_item[:price]}.reverse
       sorted_discount_basket_items.each do |sorted_basket_item|
         if total_qty_to_reduce > 0
           if sorted_basket_item[:count] >= total_qty_to_reduce
@@ -142,14 +142,13 @@ class Checkout
           end
         end
       end
-      p "basket is here"
-      @basket.each do |a_basket_item|
-        sorted_discount_basket_items.each do |discount_item|
-        end
+      sorted_discount_basket_items.each do |discount_item|
+        p @basket.select {|element| element[:item] == discount_item[:item]}.first
       end
     end
   end
 end
+
 
 
 
