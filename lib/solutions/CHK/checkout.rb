@@ -22,7 +22,8 @@
 # +------+-------+------------------------+
 
 class Checkout
-  ITEMS = ['A', 'B', 'C', 'D', 'E', 'F']
+  ITEMS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+           'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
   PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30},
             {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15},
             {item: 'E', count: 1, price: 40}, {item: 'F', count: 1, price: 10},
@@ -33,9 +34,9 @@ class Checkout
             {item: 'O', count: 1, price: 10}, {item: 'P', count: 1, price: 50},
             {item: 'Q', count: 1, price: 30}, {item: 'R', count: 1, price: 50},
             {item: 'S', count: 1, price: 30}, {item: 'T', count: 1, price: 20},
-            {item: 'G', count: 1, price: 20}, {item: 'H', count: 1, price: 10},
-            {item: 'G', count: 1, price: 20}, {item: 'H', count: 1, price: 10},
-            {item: 'G', count: 1, price: 20}, {item: 'H', count: 1, price: 10},
+            {item: 'U', count: 1, price: 40}, {item: 'V', count: 1, price: 50},
+            {item: 'W', count: 1, price: 20}, {item: 'X', count: 1, price: 90},
+            {item: 'Y', count: 1, price: 10}, {item: 'Z', count: 1, price: 50},
             ]
   MULTIBUY_OFFERS = [{item: 'A', count: 3, offer_price: 130},
                      {item: 'B', count: 2, offer_price: 45},
@@ -112,4 +113,5 @@ class Checkout
     end
   end
 end
+
 
