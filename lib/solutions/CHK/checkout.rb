@@ -34,7 +34,7 @@ class Checkout
                   {item: 'R', count: 3, free_item: 'Q'}
                  ]
 
-  GROUP_DISCOUNT_OFFERS = [{items: ['S', 'T', 'X', 'Y', 'Z'], count: 3, free_item: 'B'}]
+  GROUP_DISCOUNT_OFFERS = [{items: ['S', 'T', 'X', 'Y', 'Z'], count: 3, offer_price: 45}]
 
   def checkout(skus)
     @skus = skus
@@ -43,6 +43,7 @@ class Checkout
       return -1 if !ITEMS.include? item
     end
     structure_basket()
+    apply_group_discounts()
     apply_combo_offers()
     apply_multibuy_offers()
     apply_normal_price()
@@ -104,6 +105,13 @@ class Checkout
       end
     end
   end
+
+  def apply_group_discounts
+    @basket.each do |basket_item|
+      GROUP_DISCOUNT_OFFERS.each do |group_discount|
+      end
+  end
 end
+
 
 
