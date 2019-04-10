@@ -142,12 +142,15 @@ class Checkout
           end
         end
       end
-      p sorted_discount_basket_items
       p "basket is here"
-      p @basket
+      @basket.each do |a_basket_item|
+        sorted_discount_basket_items.each do |discount_item|
+        end
+      end
     end
   end
 end
+
 
 
 
