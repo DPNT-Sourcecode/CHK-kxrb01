@@ -116,11 +116,13 @@ class Checkout
           p discount_basket_items << basket_item
         end
     end
-    if number_of_group_discount_items >= GROUP_DISCOUNT_OFFER[:count]
 
+    if number_of_group_discount_items >= GROUP_DISCOUNT_OFFER[:count]
+      number_of_group_discount_offers = 
     end
   end
 end
+
 
 
 
