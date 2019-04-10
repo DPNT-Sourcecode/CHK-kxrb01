@@ -165,6 +165,26 @@ class ClientTest < Minitest::Test
   def test_total_price_is_120_of_basket_with_NNNM
     assert_equal 120, Checkout.new.checkout('NNNM')
   end
+
+  def test_total_price_is_200_of_basket_with_PPPPP
+    assert_equal 200, Checkout.new.checkout('PPPPP')
+  end
+
+  def test_total_price_is_80_of_basket_with_QQQ
+    assert_equal 80, Checkout.new.checkout('QQQ')
+  end
+
+  def test_total_price_is_150_of_basket_with_RRRQ
+    assert_equal 150, Checkout.new.checkout('RRRQ')
+  end
+
+  def test_total_price_is_120_of_basket_with_UUUU
+    assert_equal 120, Checkout.new.checkout('UUUU')
+  end
+
+  def test_total_price_is_90_of_basket_with_VV
+    assert_equal 90, Checkout.new.checkout('VV')
+  end
   #   H    | 10    | 5H for 45, 10H for 80  |
   # | I    | 35    |                        |
   # | J    | 60    |                        |
@@ -188,4 +208,5 @@ class ClientTest < Minitest::Test
 
 
 end
+
 
