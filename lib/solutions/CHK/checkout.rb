@@ -113,12 +113,13 @@ class Checkout
       GROUP_DISCOUNT_OFFERS.each do |group_discount|
         if group_discount[:items].include? basket_item[:item]
           p "I am here"
-          p number_of_group_discount_items += 1
+          p number_of_group_discount_items += basket_item[:count]
           discount_basket_items << basket_item[:item]
         end
-        
+
       end
     end
   end
 end
+
 
