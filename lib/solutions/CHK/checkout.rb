@@ -11,7 +11,6 @@ class Checkout
   COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B'}]
 
   def checkout(skus)
-    return -1 if skus == ""
     @skus = skus
     @total_price = 0
     skus.split("").uniq.each do |item|
@@ -80,4 +79,5 @@ class Checkout
     end
   end
 end
+
 
