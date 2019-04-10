@@ -119,7 +119,7 @@ class Checkout
               basket_item_price = item_detail[:price]
             end
           end
-          p discount_basket_items << {item: basket_item[:item],
+          discount_basket_items << {item: basket_item[:item],
             count: basket_item[:count], price: basket_item_price}
 
         end
@@ -128,10 +128,11 @@ class Checkout
     if number_of_group_discount_items >= GROUP_DISCOUNT_OFFER[:count]
       number_of_group_discount_offers = number_of_group_discount_items / GROUP_DISCOUNT_OFFER[:count]
       @total_price += (GROUP_DISCOUNT_OFFER[:offer_price] * number_of_group_discount_offers)
-      sorted_discount_basket_items = discount_basket_items.sort_by{}
+      p sorted_discount_basket_items = discount_basket_items.sort_by{|a_discount_item| a_discount_item[:price]}.reverse
     end
   end
 end
+
 
 
 
