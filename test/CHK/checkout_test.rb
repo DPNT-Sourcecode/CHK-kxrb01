@@ -69,4 +69,9 @@ class ClientTest < Minitest::Test
   def test_total_price_is_155_of_basket_with_FFFABCDFF
     assert_equal 155, Checkout.new.checkout('FFFABCDFF')
   end
+
+  def test_total_price_is_875_of_basket_with_BAAAAAABDDDEEBEECDAACCDBBBBEEEFFFFF
+    assert_equal 875, Checkout.new.checkout('BAAAAAABDDDEEBEECDAACCDBBBBEEEFFFFF')
+  end
 end
+
