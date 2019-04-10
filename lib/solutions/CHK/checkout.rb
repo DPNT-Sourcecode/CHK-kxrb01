@@ -34,7 +34,7 @@ class Checkout
                   {item: 'R', count: 3, free_item: 'Q'}
                  ]
 
-  GROUP_DISCOUNT_OFFERS = [{items: ['S', 'T', 'X', 'Y', 'Z'], count: 3, offer_price: 45}]
+  GROUP_DISCOUNT_OFFER = {items: ['S', 'T', 'X', 'Y', 'Z'], count: 3, offer_price: 45}
 
   def checkout(skus)
     @skus = skus
@@ -110,16 +110,17 @@ class Checkout
     number_of_group_discount_items = 0
     discount_basket_items = []
     @basket.each do |basket_item|
-      GROUP_DISCOUNT_OFFERS.each do |group_discount|
-        if group_discount[:items].include? basket_item[:item]
+      GROUP_DISCOUNT_OFFER.each do |group_discount|
+        if GROUP_DISCOUNT_OFFER[:items].include? basket_item[:item]
           p "I am here"
           p number_of_group_discount_items += basket_item[:count]
-          discount_basket_items << basket_item[:item]
+          p discount_basket_items << basket_item[:item]
         end
 
       end
     end
   end
 end
+
 
 
