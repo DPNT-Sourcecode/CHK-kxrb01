@@ -110,12 +110,15 @@ class Checkout
     number_of_group_discount_items = 0
     @basket.each do |basket_item|
       GROUP_DISCOUNT_OFFERS.each do |group_discount|
-        if group_discount[:items].includes? basket_item[:item]
-
+        if group_discount[:items].include? basket_item[:item]
+          p "I am here"
+          p number_of_group_discount_items += 1
         end
       end
+    end
   end
 end
+
 
 
 
