@@ -12,6 +12,7 @@ class Checkout
 
   def checkout(skus)
     @skus = skus
+    return -1 if @skus == ""
     @total_price = 0
     skus.split("").uniq.each do |item|
       return -1 if !ITEMS.include? item
@@ -79,4 +80,5 @@ class Checkout
     end
   end
 end
+
 
