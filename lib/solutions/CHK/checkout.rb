@@ -113,7 +113,15 @@ class Checkout
         if GROUP_DISCOUNT_OFFER[:items].include? basket_item[:item]
           p "I am here"
           p number_of_group_discount_items += basket_item[:count]
-          p discount_basket_items << {item: basket_item[:item], count: basket_item[:count], 
+          basket_item_price = 0
+          PRICES.each do |item_detail|
+            if item_detail[:item] == basket_item[:item]
+              basket_item_price = item_detail[:price]
+            end
+          end
+          p discount_basket_items << {item: basket_item[:item],
+            count: basket_item[:count], price: basket_item_price}
+
         end
     end
 
@@ -124,5 +132,6 @@ class Checkout
     end
   end
 end
+
 
 
