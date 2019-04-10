@@ -127,12 +127,14 @@ class Checkout
 
     if number_of_group_discount_items >= GROUP_DISCOUNT_OFFER[:count]
       number_of_group_discount_offers = number_of_group_discount_items / GROUP_DISCOUNT_OFFER[:count]
-      
+
       @total_price += (GROUP_DISCOUNT_OFFER[:offer_price] * number_of_group_discount_offers)
+      total_qty_to_reduce = number_of_group_discount_offers * GROUP_DISCOUNT_OFFER[:count]
       p sorted_discount_basket_items = discount_basket_items.sort_by{|a_discount_item| a_discount_item[:price]}.reverse
     end
   end
 end
+
 
 
 
