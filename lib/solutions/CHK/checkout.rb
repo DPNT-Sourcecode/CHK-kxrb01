@@ -34,6 +34,8 @@ class Checkout
                   {item: 'R', count: 3, free_item: 'Q'}
                  ]
 
+  GROUP_DISCOUNT_OFFERS = [{items: ['S', 'T', 'X', 'Y', 'Z'], count: 3, free_item: 'B'}]
+
   def checkout(skus)
     @skus = skus
     @total_price = 0
@@ -103,4 +105,5 @@ class Checkout
     end
   end
 end
+
 
