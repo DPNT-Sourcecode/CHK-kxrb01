@@ -3,7 +3,7 @@ class Checkout
   ITEMS = ['A', 'B', 'C', 'D', 'E']
   PRICES = [{item: 'A', count: 1, price: 50}, {item: 'B', count: 1, price: 30}, {item: 'C', count: 1, price: 20}, {item: 'D', count: 1, price: 15}, {item: 'E', count: 1, price: 40}]
   MULTIBUY_OFFERS = [{item: 'A', count: 3, offer_price: 130}, {item: 'B', count: 2, offer_price: 45}, {item: 'A', count: 5, offer_price: 200}]
-  COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B'}]
+  COMBO_OFFERS = [{item: 'E', count: 2, free_item: 'B', free_item_count: 1}]
 
   def checkout(skus)
     @skus = skus
@@ -56,11 +56,11 @@ class Checkout
     @basket.each do |basket_item|
       COMBO_OFFERS.each do |item_detail|
         if item_detail[:item] == basket_item[:item]
-          number_of_combo_offers = 0
+          number_of_possible_combo_offers = 0
           if basket_item[:count] >= item_detail[:count]
-            number_of_combo_offers = basket_item[:count] / item_detail[:count]
+            number_of_possible_combo_offers = basket_item[:count] / item_detail[:count]
           while item_detail[:count] <= basket_item[:count]
-            if @basket.select {|element| element[:item] == item_detail[:free_item]}.first != nil
+            if @basket.select {|element| element[:item] == item_detail[:free_item]} != nil
               #reduce the quantity of the free item in the basket by 1
               @basket.select {|element| element[:item] == item_detail[:free_item]}.first[:count] -= 1
               PRICES.select{|an_item| an_item[:item] == item_detail[:item] }.first[:price] * item_detail[:count]
@@ -73,9 +73,3 @@ class Checkout
     end
   end
 end
-
-
-
-
-
-
