@@ -33,7 +33,7 @@ class Checkout
         if offer[:item] == basket_item[:item]
           number_of_offers = 0
           if basket_item[:count] >= offer[:count]
-            number_of_offers = basket_item[:count] / offer[:count]          
+            number_of_offers = basket_item[:count] / offer[:count]
             @total_price += (offer[:offer_price] * number_of_offers)
             basket_item[:count] -= (offer[:count] * number_of_offers)
           end
@@ -47,7 +47,7 @@ class Checkout
       PRICES.each do |item_detail|
         if item_detail[:item] == basket_item[:item]
           while item_detail[:count] <= basket_item[:count]
-            @total_price += item_detail[:price]
+            @total_price += (item_detail[:price] * basket_item[:count])
             basket_item[:count] -= item_detail[:count]
           end
         end
@@ -73,6 +73,7 @@ class Checkout
     end
   end
 end
+
 
 
 
